@@ -1,0 +1,32 @@
+
+<header>
+  > <a href="">Return</a> / <a href="">List of articles </a>
+</header>
+
+<div id="content">
+  <section>
+    <div id="title">
+      <span class="icon"><img src="/images/icons/<%= @latest_article %>design.png" height="100" /></span><br />
+      <span class="date">2015 - web design</span><br />
+      <span class="title"><a href="">Why i love sass and ror</a></span><br />
+      <p class="leadin">
+        Little explanation and some code.<br />
+        I dream of unicorns
+      </p>
+    </div>
+  </section>
+</div>
+
+<footer>
+
+  <% @categories.each_with_index do |category, index| %>
+
+      <div class='menu_item menu_<%= index %>'>
+        <span class="icon"><img src="/images/icons/<%= category[:icon] %>" height="50" /></span><br />
+        <span class="category"><%= category[:name] %></span><br />
+      </div>
+  <% end %>
+
+
+</footer>
+
