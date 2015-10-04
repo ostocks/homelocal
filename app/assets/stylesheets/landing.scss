@@ -1,0 +1,133 @@
+$icon_size: 110px;
+$size_landing_round: 500px;
+
+@mixin border-line($width, $color) {
+  // just for development
+  //border: $width solid $color;
+}
+
+@mixin icon($icon, $icon_size) {
+  background-image: url('/images/icons/#{$icon}.png');
+  background-size: $icon_size $icon_size;
+  background-repeat: no-repeat;
+}
+
+// FIXME: i need some eye candy!
+@mixin shadow-icons($icon_size) {
+  border-radius: 50%;
+  width: $icon_size;
+  height: $icon_size;
+  border: 2px solid rgba(0, 0, 0, .2);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+html, body{
+  height:100%;
+  width: 100%;
+}
+
+body {
+  background-image: url('/images/structure/landing_bg_river.jpg');
+  background-size: cover;
+
+  /* Start Flex from w3c */
+  display: -webkit-inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the element vertical/horison */
+.circle-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 3;
+}
+
+/* make the round circle */
+#landingUI {
+  border-radius: 50%;
+  width: $size_landing_round;
+  height: $size_landing_round;
+  border: 1px solid #CECECE;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  #inside_circle {
+    width: inherit;
+    height: inherit;
+    opacity: 0.8;
+    z-index: 0;
+
+    .icon {
+      display: block;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+    }
+
+    #icon_top {
+      width: $icon_size;
+      height: $icon_size;
+      margin: 0 auto;
+      margin-top: -$icon_size * 0.5;
+
+      @include shadow_icons($icon_size);
+      @include icon(list, $icon_size);
+    }
+
+    #icon_bottom {
+      width: $icon_size;
+      height: $icon_size;
+      margin: 0 auto;
+      margin-top: $size_landing_round + ( $icon_size * -1); /* :D */
+
+      @include shadow_icons($icon_size);
+      @include icon(article, $icon_size);
+    }
+
+    #center_column {
+      @include border-line(1px, pink);
+      width: $size_landing_round;
+      float: left;
+      margin-top: $size_landing_round / 2 + ( $icon_size * -1);
+
+      .left {
+        float: left;
+        width: $icon_size;
+        margin-left: -$icon_size / 2;
+        height: $icon_size;
+
+        @include shadow_icons($icon_size);
+        @include icon(picture, $icon_size);
+      }
+
+      .center {
+        /*
+        float: left;
+        width: $icon_size;
+        margin-left: $size_landing_round/2 - $icon_size;
+        height: $icon_size;
+        text-align: center;
+
+        @include shadow_icons($icon_size);
+        */
+      }
+
+      .right {
+        width: $icon_size;
+        height: $icon_size;
+        margin-left: $size_landing_round - ($icon_size / 2);
+
+        @include shadow_icons($icon_size);
+        @include icon(people, $icon_size);
+      }
+
+    }
+  }
+}

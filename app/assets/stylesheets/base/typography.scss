@@ -1,0 +1,26 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,300";
+@import "https://fonts.googleapis.com/css?family=Fjord+One";
+
+body {
+  font-family: "Open Sans", Arial, serif;
+}
+
+
+@media (min-width: 400px) {
+  body { font-size: 75%; }
+}
+@media (min-width: 700px) {
+  body { font-size: 90%; }
+}
+@media (min-width: 850px) {
+  body { font-size: 100%; }
+}
+@media (min-width: 1000px) {
+  body { font-size: 110%; }
+}
+@media (min-width: 1100px) {
+  body { font-size: 115%;}
+}
+@media (min-width: 1450px) {
+  body { font-size: 125%; }
+}

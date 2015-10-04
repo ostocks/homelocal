@@ -1,0 +1,185 @@
+// Place all the styles related to the article controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin border($color) {
+  border-top: 3px solid $color;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-image: url('/images/structure/article_bg_index.jpg');
+  background-size: cover;
+}
+
+header, section, footer {
+  color: white;
+}
+
+header {
+  padding: 0.6em;
+  background-color: #272D39;
+  border-bottom: 1px solid #1DF71C;
+  color: white;
+  font-family: "Open Sans", Arial, serif;
+  font-weight: 130;
+  font-size: 0.7em;
+  letter-spacing: 2px;
+
+  a {
+    color: #3A414B;
+  }
+}
+
+#content {
+
+  width: 100%;
+  padding: 1em;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAIklEQVQImWNgoB7gl5QzRhGQU9Yw5heXSxMUl/NFkYAJAABMfgLmLXWWHQAAAABJRU5ErkJggg==);
+  background-repeat: repeat;
+  font-family: "Fjord One", Arial, serif;
+  font-weight: 400;
+  line-height: 1.4;
+
+  margin: 0;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 0 auto;
+
+  align-items: center;
+  justify-content: center;
+
+
+  section {
+    padding: 5px;
+    margin: 10px;
+
+    color: white;
+
+    font-size: 2em;
+    text-align: center;
+
+
+
+    #title {
+      font-family: "Open Sans", Arial, serif;
+
+      a {
+        color: white;
+      }
+
+      .icon img {
+        filter: grayscale(1);
+      }
+
+      .date {
+        font-size: 1.3em;
+        padding-bottom: 10px;
+      }
+      .title {
+        text-transform: uppercase;
+        font-size: 1.3em;
+        letter-spacing: 3px;
+        font-weight: 600;
+      }
+
+      p {
+        font-family: "Open Sans", Arial, serif;
+        font-weight: 100;
+        font-size: 0.5em;
+
+      }
+    }
+  }
+}
+
+
+footer {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+
+  height: 100px;
+  color: black;
+
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAGCAYAAAAL+1RLAAAAIklEQVQImWNgoB7gl5QzRhGQU9Yw5heXSxMUl/NFkYAJAABMfgLmLXWWHQAAAABJRU5ErkJggg==);
+  background-repeat: repeat;
+
+  font-family: "Open Sans", Arial, serif;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 2px;
+
+  opacity: 0.8;
+
+  .menu_0 {
+    @include border(#bfb1d5);
+  }
+
+  .menu_1 {
+    @include border(#ebe1fd);
+  }
+
+  .menu_2 {
+    @include border(#f0e0a2);
+  }
+
+  .menu_3 {
+    @include border(#51a1c4);
+  }
+
+  .menu_4 {
+    @include border(#fc9b7a);
+  }
+
+  .menu_item {
+    padding-top: 15px;
+
+    color: white;
+
+    text-align: center;
+    line-height: 20px;
+    font-family: "Open Sans", Arial, serif;
+    font-weight: 100;
+    font-size: 15px;
+    width: 100%;
+    margin-left: 1px;
+    margin-right: 1px;
+
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+
+
+    .category {
+      font-weight: 400;
+    }
+
+  }
+
+  .menu_item:hover {
+    opacity: 0.3;
+    filter: grayscale(1);
+  }
+}
